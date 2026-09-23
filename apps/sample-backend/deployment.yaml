@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-backend
+  namespace: sample-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample-backend
+  template:
+    metadata:
+      labels:
+        app: sample-backend
+    spec:
+      containers:
+        - name: sample-backend
+          image: harbor.local:8443/sample-project/sample-backend:latest
+          ports:
+            - containerPort: 3000
