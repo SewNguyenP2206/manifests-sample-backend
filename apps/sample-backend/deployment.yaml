@@ -15,6 +15,7 @@ spec:
     spec:
       containers:
         - name: sample-backend
-          image: harbor.local:8443/sample-project/sample-backend:latest
+          image: harbor-core.harbor.svc.cluster.local/library/sample-backend:4
           ports:
             - containerPort: 3000
+\n // X
